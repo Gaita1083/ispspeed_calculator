@@ -26,9 +26,9 @@ export function QuickHousehold({ data, onChange }: QuickHouseholdProps) {
                 hint="How many people live in your home?"
             />
 
-            <div className="bg-green-100 border-2 border-green-200 rounded-lg p-4">
-                <h3 className="font-semibold text-green-700 flex items-center gap-2 mb-3">
-                    <Zap className="text-green-600" size={20} />
+            <div className="bg-brand-teal/10 border-2 border-brand-teal/30 rounded-lg p-4">
+                <h3 className="font-semibold text-brand-teal flex items-center gap-2 mb-3">
+                    <Zap className="text-brand-orange" size={20} />
                     Usage Patterns
                 </h3>
             

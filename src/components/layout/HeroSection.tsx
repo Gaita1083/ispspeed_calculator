@@ -4,11 +4,11 @@ import type { HeroSectionProps } from "@/types";
 
 export function HeroSection({ onStart }: HeroSectionProps) {
     return(
-        <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+        <div className="min-h-screen bg-linear-to-br from-brand-bg to-brand-purple/10 flex items-center justify-center p-4">
             <Card className="max-w-2xl p-8 text-center">
                 <div className="mb-6">
-                    <div className="inline-block p-4 bg-green-100 rounded-full mb-4">
-                        <Wifi className="text-green-600" size={48}/>
+                    <div className="inline-block p-4 bg-brand-purple/10 rounded-full mb-4">
+                        <Wifi className="text-brand-purple" size={48}/>
                     </div>
 
                     <h1 className="text-4xl font-bold text-gray-900 mb-3">
@@ -22,34 +22,34 @@ export function HeroSection({ onStart }: HeroSectionProps) {
                 <div className="grid md:grid-cols-2 gap-4 mb-8">
                     <button
                         onClick={() => onStart('quick')} 
-                        className="p-6 bg-blue-50 rounded-lg border-2 border-blue-200 hover:border-blue-400 hover:bg-blue-100 transition-all cursor-pointer text-left group"
+                        className="p-6 bg-brand-purple/5 rounded-lg border-2 border-brand-purple/30 hover:border-brand-purple hover:bg-brand-purple/10 transition-all cursor-pointer text-left group"
                     >   <div className="flex items-center gap-2 mb-2">
-                            <Zap className="text-green-600 group-hover:fill-green-600 transition-colors" size={20} />
-                            <span className="font-medium text-blue-900 group-hover:text-blue-700">
+                            <Zap className="text-brand-orange group-hover:fill-brand-orange transition-colors" size={20} />
+                            <span className="font-medium text-brand-purple group-hover:text-brand-purple/80">
                                 Quick Estimate
                             </span>
                         </div>
                         <p className="text-sm text-gray-700 mb-3">
                             Get a recommendation in under 2 minutes
                         </p>
-                        <div className="text-blue-600 text-sm font-medium">
+                        <div className="text-brand-purple text-sm font-medium">
                             Start Quick Mode <ArrowRight className="inline-block ml-1" size={16} />
                         </div>
                     </button>
 
                     <button
-                        className="p-6 bg-indigo-50 rounded-lg border-2 border-indigo-200 hover:border-indigo-400 hover:bg-indigo-100 transition-all cursor-pointer text-left group"
+                        className="p-6 bg-brand-teal/5 rounded-lg border-2 border-brand-teal/30 hover:border-brand-teal hover:bg-brand-teal/10 transition-all cursor-pointer text-left group"
                         onClick={() => onStart('detailed')}
                     >   <div className="flex items-center gap-2 mb-2">
-                        <ClipboardPenLine className="text-green-600 group-hover:fill-green-600 transition-colors" size={20} />
-                        <span className="font-medium text-indigo-900 group-hover:text-indigo-700">
+                        <ClipboardPenLine className="text-brand-orange group-hover:fill-brand-orange transition-colors" size={20} />
+                        <span className="font-medium text-brand-teal group-hover:text-brand-teal/80">
                             Detailed Assessment
                         </span>
                         </div>
                         <p className="text-sm text-gray-700 mb-3">
                             More accurate results in about 5 minutes
                         </p>
-                        <div className="text-green-600 text-sm font-medium">
+                        <div className="text-brand-teal text-sm font-medium">
                             Start Detailed Mode <ArrowRight className="inline-block ml-1" size={16} />
                         </div>
                     </button>

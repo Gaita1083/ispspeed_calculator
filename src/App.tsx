@@ -64,7 +64,7 @@ function App() {
         <NavBar onLogoClick={handleReset} />
         {currentStep === 'hero' && <HeroSection onStart={handleStart} />}
         {currentStep === 'assessment' && CurrentPageComponent && (
-            <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 p-4 py-8">
+            <div className="min-h-screen bg-linear-to-br from-brand-bg to-brand-purple/10 p-4 py-8">
             <div className="max-w-3xl mx-auto">
 
               <div className="mb-8">

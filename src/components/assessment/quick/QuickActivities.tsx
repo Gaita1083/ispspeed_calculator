@@ -32,9 +32,9 @@ export function QuickActivities({ data, onChange}: QuickActivitiesProps) {
                                         type="checkbox"
                                         checked={data?.[activity.id] as boolean ?? false}
                                         onChange={(e) => onChange(activity.id, e.target.checked)}
-                                        className="w-5 h-5 accent-green-600"
+                                        className="w-5 h-5 accent-brand-orange"
                                     />
-                                    <Icon size={22}  className="text-green-600"/>
+                                    <Icon size={22}  className="text-brand-orange"/>
                                     <span>{activity.label}</span>
                                 </label>
                             </div>
@@ -48,7 +48,7 @@ export function QuickActivities({ data, onChange}: QuickActivitiesProps) {
                                         <button
                                             key={q.id}
                                             onClick={() => onChange('streamingQuality', q.id)}
-                                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${data?.streamingQuality === q.id ? 'bg-green-600 text-white' : 'bg-white border-2 border-gray-200 hover:border-gray-300'}`}
+                                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${data?.streamingQuality === q.id ? 'bg-brand-purple text-white' : 'bg-brand-bg border-2 border-brand-purple/20 hover:border-brand-purple/50'}`}
                                         >
                                             {q.label}
                                         </button>
