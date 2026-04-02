@@ -1,5 +1,5 @@
 import { Wifi, ChartNoAxesCombined, Clock, Lightbulb } from 'lucide-react';
-import type { ResultsDisplayProps } from '@/types';
+import type { ResultsDashboardProps as ResultsDisplayProps } from '@/types';
 import { getResultsBreakdown } from '@/utils/sharedHelpers';
 
 export function ResultsDisplay({ data, results }: ResultsDisplayProps) {

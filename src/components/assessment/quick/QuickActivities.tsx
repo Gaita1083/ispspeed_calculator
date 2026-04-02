@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import { RouterIcon, Popcorn, Gamepad2, Video, CloudBackup, SmartphoneNfc } from "lucide-react";
 import type { QuickActivitiesProps } from "@/types";
-import { ACTIVITIES_CONFIG, STREAMING_QUALITIIES } from "@/utils/constants";
+import { ACTIVITIES_CONFIG, STREAMING_QUALITIES } from "@/utils/constants";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 
 const ACTIVITY_ICONS: Record<string, LucideIcon> = {
@@ -44,7 +44,7 @@ export function QuickActivities({ data, onChange}: QuickActivitiesProps) {
                                     Streaming Quality:
                                 </label>
                                 <div className="flex gap-2">
-                                    {STREAMING_QUALITIIES.map(q => (
+                                    {STREAMING_QUALITIES.map(q => (
                                         <button
                                             key={q.id}
                                             onClick={() => onChange('streamingQuality', q.id)}
