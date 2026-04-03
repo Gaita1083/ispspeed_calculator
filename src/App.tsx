@@ -133,11 +133,16 @@ function App() {
                 <div className="min-h-screen bg-linear-to-br from-brand-bg to-brand-purple/10 p-4 py-8">
                     <div className="max-w-3xl mx-auto">
 
-                        <div className="mb-8">
-                            <ProgressBar current={currentPage + 1} total={totalSteps} />
-                            <div className="text-sm text-muted-foreground">
-                                Step {currentPage + 1} of {totalSteps}: {pages[currentPage].title}
+                        <div className="mb-8 space-y-2">
+                            <div className="flex justify-between items-center text-sm">
+                                <span className="font-semibold text-brand-purple">
+                                    {pages[currentPage].title}
+                                </span>
+                                <span className="text-muted-foreground">
+                                    {currentPage + 1} / {totalSteps}
+                                </span>
                             </div>
+                            <ProgressBar current={currentPage + 1} total={totalSteps} />
                         </div>
 
                         <Card className="mb-6">

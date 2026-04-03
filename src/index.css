@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import "tailwindcss";
 
-/* Brand colour tokens */
+/* ── 1. Brand colour tokens ─────────────────────────────────────────────── */
 @theme {
   --color-brand-purple: #511684;
   --color-brand-orange: #f84914;
@@ -9,35 +9,67 @@
   --color-brand-bg:     #f7f8f6;
 }
 
-/* Global Styles */
+/* ── 2. Shadcn CSS variable definitions ─────────────────────────────────── */
 @layer base {
   :root {
-    /* #f7f8f6 */
-    --background: 90 14% 97%;
-    --foreground: 222.2 84% 4.9%;
-    /* #f7f8f6 */
-    --card: 90 14% 97%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 90 14% 97%;
-    --popover-foreground: 222.2 84% 4.9%;
-    /* #511684 */
-    --primary: 272 72% 30%;
-    --primary-foreground: 0 0% 100%;
-    /* #2dbeb1 */
-    --secondary: 175 62% 46%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 90 10% 93%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    /* #f84914 */
-    --accent: 14 94% 53%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 90 10% 88%;
-    --input: 90 10% 88%;
-    /* #511684 */
-    --ring: 272 72% 30%;
-    --radius: 0.5rem;
+    --background:            90 14% 97%;
+    --foreground:            222.2 84% 4.9%;
+    --card:                  90 14% 97%;
+    --card-foreground:       222.2 84% 4.9%;
+    --popover:               90 14% 97%;
+    --popover-foreground:    222.2 84% 4.9%;
+    --primary:               272 72% 30%;      /* #511684 */
+    --primary-foreground:    0 0% 100%;
+    --secondary:             175 62% 46%;      /* #2dbeb1 */
+    --secondary-foreground:  0 0% 100%;
+    --muted:                 90 10% 93%;
+    --muted-foreground:      215.4 16.3% 46.9%;
+    --accent:                14 94% 53%;       /* #f84914 */
+    --accent-foreground:     0 0% 100%;
+    --destructive:           0 84.2% 60.2%;
+    --destructive-foreground:210 40% 98%;
+    --border:                90 10% 88%;
+    --input:                 90 10% 88%;
+    --ring:                  272 72% 30%;
+    --radius:                0.5rem;
+  }
+}
+
+/* ── 3. Bridge CSS vars → Tailwind v4 colour utilities ──────────────────── */
+/*      Without this, bg-primary / text-muted-foreground / border-border     */
+/*      etc. resolve to nothing because Tailwind v4 looks for --color-*     */
+@theme inline {
+  --color-background:            hsl(var(--background));
+  --color-foreground:            hsl(var(--foreground));
+  --color-card:                  hsl(var(--card));
+  --color-card-foreground:       hsl(var(--card-foreground));
+  --color-popover:               hsl(var(--popover));
+  --color-popover-foreground:    hsl(var(--popover-foreground));
+  --color-primary:               hsl(var(--primary));
+  --color-primary-foreground:    hsl(var(--primary-foreground));
+  --color-secondary:             hsl(var(--secondary));
+  --color-secondary-foreground:  hsl(var(--secondary-foreground));
+  --color-muted:                 hsl(var(--muted));
+  --color-muted-foreground:      hsl(var(--muted-foreground));
+  --color-accent:                hsl(var(--accent));
+  --color-accent-foreground:     hsl(var(--accent-foreground));
+  --color-destructive:           hsl(var(--destructive));
+  --color-destructive-foreground:hsl(var(--destructive-foreground));
+  --color-border:                hsl(var(--border));
+  --color-input:                 hsl(var(--input));
+  --color-ring:                  hsl(var(--ring));
+  --radius-sm:  calc(var(--radius) - 4px);
+  --radius-md:  calc(var(--radius) - 2px);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) + 4px);
+}
+
+/* ── 4. Global border colour default ────────────────────────────────────── */
+/*      Tailwind v4 `border` class uses currentColor (≈black) by default.   */
+/*      This makes every border use the design-system border token instead.  */
+@layer base {
+  *, *::before, *::after {
+    border-color: hsl(var(--border));
   }
 }
 
